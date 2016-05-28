@@ -1,6 +1,3 @@
-/**
- * Created by Home on 5/28/2016.
- */
 import java.util.Scanner;
 import java.util.*;
 public class Animal {
