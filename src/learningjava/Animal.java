@@ -46,7 +46,7 @@ public class Animal {
 			
 		}
 		
-		this.setFavoriteColor();
+		//this.setFavoriteColor();
 		this.setUniqueID();
 		
 	}
@@ -105,7 +105,55 @@ public class Animal {
 	}
 
 	public void setFavoriteChar(char favoriteChar) {
-		this.favoriteChar = favoriteChar;
+		int randomNumber = (int) (Math.random() * 126) + 1;
+		
+		this.favoriteChar = (char) randomNumber;
+		
+		if(randomNumber == 32){
+			
+			System.out.println("Favorite character set to Space");
+			
+		} else if (randomNumber == 10){
+			
+			System.out.println("Favourite character set to Newline");
+		} else {
+			
+			System.out.println("Favorite character set to " + this.favoriteChar);
+			
+		}
+		
+		if((randomNumber > 97) && (randomNumber < 122)){
+			
+			System.out.println("Favorite character is a lowercase letter");
+			
+		}
+		
+		if(((randomNumber > 97) && (randomNumber < 122)) || ((randomNumber > 64) && (randomNumber < 91)) ){
+			
+			System.out.println("Favorite character is a letter");
+		
+		}
+			
+		int whichIsBigger = (50 > randomNumber) ? 50 : randomNumber;
+		
+		switch(randomNumber){
+		
+			case 8: 
+				System.out.println("Favorite character set to backspace");
+				break;
+			
+			case 10:
+			case 11:
+			case 12:
+				System.out.println("Favorite character set to backspace");
+				break;
+				
+			default : 
+				System.out.println();
+				break;
+		
+		}
+		
 	}
 
 	public double getSpeed() {
@@ -124,6 +172,71 @@ public class Animal {
 		this.height = height;
 	}
 
+	protected static void countTo(int startingNumber){
+	
+		for(int i = startingNumber; i <= 100; i++){
+			
+			if(i == 90) continue;
+			
+			System.out.println(i);
+			
+		}
+		
+		
+	}
+	
+	protected static String printNumbers(int maxNumbers){
+		
+		int i = 1;
+				
+		while(i < (maxNumbers / 2)){
+			
+			System.out.println(i);
+			i++;
+			
+			if(i == (maxNumbers/2)) break;
+			
+		}
+		
+		Animal.countTo(maxNumbers/2);
+		
+		return "End of printNumbers";
+		
+	}
+	
+	protected static void guessMyNumber(){
+		
+		int number;
+		
+		do {
+			
+			System.out.println("Gues Number up to 100");
+			
+			while(!userInput.hasNextInt()){
+				
+				String numberEntered = userInput.next();
+				System.out.printf("%s is not a number\n", numberEntered);
+				
+			}
+			
+			number = userInput.nextInt();
+			
+		} while(number != 50);
+		
+	}
+	
+	public String makeSound(){
+		
+		return "Grrr";
+		
+	}
+	
+	public static void speakAnimal(Animal randAnimal){
+		
+		System.out.println("Animal says " + randAnimal.makeSound());
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		Animal theAnimal = new Animal();
