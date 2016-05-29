@@ -241,6 +241,21 @@ public class Animal {
 		
 		Animal theAnimal = new Animal();
 		
+		int[] favoriteNumbers = new int[20];
+		favoriteNumbers[0] = 100;
+		
+		String[] stringArray = {"Random", "Words", "Here"};
+		
+		for(String word : stringArray){
+			
+			System.out.println(word);
+			
+		}
+		
+		String[][][] arrayName = { { { "000" }
+		
+		
+		
 	}
 
 }	
